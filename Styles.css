@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background: #0a0a0a;
+  color: #fff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  position: fixed;
+  width: 100%;
+  background: rgba(10,10,10,0.8);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-weight: bold;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #aaa;
+}
+
+nav a.cta {
+  color: #fff;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10%;
+}
+
+.hero h1 {
+  font-size: 4rem;
+}
+
+.hero p {
+  margin: 20px 0;
+  color: #888;
+}
+
+button {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+}
+
+.section {
+  padding: 100px 10%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #111;
+  padding: 20px;
+  border: 1px solid #222;
+}
+
+.card.highlight {
+  border: 1px solid #fff;
+}
+
+.cta-section {
+  text-align: center;
+  padding: 100px 20px;
+}
