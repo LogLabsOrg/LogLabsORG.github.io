@@ -1,85 +1,192 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
 }
 
 body {
-  background: #0a0a0a;
-  color: #fff;
+  background: #0b0b0c;
+  color: #eaeaea;
+  overflow-x: hidden;
 }
 
+/* NAVBAR */
 header {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 40px;
   position: fixed;
   width: 100%;
-  background: rgba(10,10,10,0.8);
-  backdrop-filter: blur(10px);
+  top: 0;
+  padding: 18px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(10,10,10,0.6);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  z-index: 1000;
 }
 
 .logo {
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
 }
 
 nav a {
-  margin-left: 20px;
+  margin-left: 25px;
   text-decoration: none;
-  color: #aaa;
+  color: #888;
+  transition: 0.3s;
 }
 
-nav a.cta {
+nav a:hover {
   color: #fff;
 }
 
+nav .cta {
+  color: #fff;
+  border: 1px solid #333;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+/* HERO */
+main {
+  margin-top: 90px;
+}
+
 .hero {
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0 10%;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255,255,255,0.08), transparent);
+  filter: blur(100px);
+  top: 20%;
+  left: 10%;
 }
 
 .hero h1 {
-  font-size: 4rem;
+  font-size: 4.5rem;
+  font-weight: 600;
+  line-height: 1.1;
+  max-width: 700px;
 }
 
 .hero p {
-  margin: 20px 0;
-  color: #888;
+  margin-top: 20px;
+  color: #9a9a9a;
+  font-size: 1.2rem;
 }
 
 button {
-  background: #fff;
-  color: #000;
+  margin-top: 30px;
+  background: white;
+  color: black;
   border: none;
-  padding: 12px 24px;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 500;
   cursor: pointer;
+  transition: 0.25s;
 }
 
+button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* SECTIONS */
 .section {
-  padding: 100px 10%;
+  padding: 120px 10%;
 }
 
+.section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+/* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
 }
 
+/* CARDS */
 .card {
-  background: #111;
-  padding: 20px;
-  border: 1px solid #222;
+  background: linear-gradient(145deg, #111, #0c0c0c);
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(255,255,255,0.08), transparent);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255,255,255,0.15);
 }
 
 .card.highlight {
   border: 1px solid #fff;
 }
 
+/* CLEO */
+#cleo {
+  text-align: center;
+}
+
+#cleo p {
+  color: #aaa;
+  max-width: 500px;
+  margin: 10px auto;
+}
+
+/* CTA */
 .cta-section {
   text-align: center;
-  padding: 100px 20px;
+  padding: 140px 20px;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.03));
+}
+
+.cta-section h2 {
+  font-size: 2.8rem;
+}
+
+/* CONTACT */
+#contact p {
+  color: #aaa;
+}
+
+/* FOOTER */
+footer {
+  padding: 40px;
+  text-align: center;
+  color: #666;
+  border-top: 1px solid rgba(255,255,255,0.05);
 }
